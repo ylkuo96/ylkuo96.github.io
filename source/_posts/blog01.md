@@ -53,6 +53,10 @@ $ git clone https://github.com/theme-next/hexo-theme-next themes/next
 
 其中有四種 schema 可以選。
 在 theme 中的 \_config.yml 搜尋 scheme 選擇想要的即可，在這邊選擇了 Pisces。
+
+其中 code highlight theme 也可以選。
+我選擇將 `highlight_theme: normal` 改成 `highlight_theme: night eighties`。
+
 最後在 blog 的 \_config.yml 將 `theme: landscape` 改成 `theme: next` 即可。
 
 ### Categories
@@ -171,6 +175,7 @@ note:: 若遇到 `fatal: Not a git repository (or any of the parent directories)
 3. 產生靜態檔 `$ hexo g` (generate)
 4. 預覽 `$ hexo s` (server)
 5. 部屬 `$ hexo d` (deploy) 
+6. 若有點怪怪的可以時不時 `$ hexo clean` 一下 :P
 
 ## References
 1. [other people's hexo blog](https://www.larrynote.com/website-service/6590/)
