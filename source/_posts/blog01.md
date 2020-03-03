@@ -171,3 +171,8 @@ note:: 若遇到 `fatal: Not a git repository (or any of the parent directories)
 3. 產生靜態檔 `$ hexo g` (generate)
 4. 預覽 `$ hexo s` (server)
 5. 部屬 `$ hexo d` (deploy) 
+
+## References
+1. [other people's hexo blog](https://www.larrynote.com/website-service/6590/)
+2. [用 git 維持 hexo 資料夾](https://github.com/LeonWuV/FE-blog-repository/blob/master/hexo/hexo%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98%E4%B9%8B%E6%88%91%E4%BB%AC%E6%8D%A2%E4%BA%86%E7%94%B5%E8%84%91%E6%80%8E%E4%B9%88%E5%8A%9E.md)
+3. [若 hexo g 報錯](http://blog.senjoeson.com/2018/06/07/hexo%E5%B8%B8%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/)
