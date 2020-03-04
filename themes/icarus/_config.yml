@@ -9,8 +9,8 @@ canonical_url:
 # Path or URL to RSS atom.xml
 rss: 
 # Path or URL to the website's logo to be shown on the left of the navigation bar or footer
-logo: /images/logo.svg 
-    #text: BLOG
+logo: #/images/logo.svg 
+    text: BLOG ∞
 # Open Graph metadata
 # https://hexo.io/docs/helpers.html#open-graph
 open_graph:
@@ -28,9 +28,9 @@ open_graph:
 navbar:
     # Navigation bar menu links
     menu:
-        Home: /
+        #Home: /
         #Archives: /archives
-        Categories: /categories
+        #Categories: /categories
         #Tags: /tags
         About: /about
     # Navigation bar links to be shown on the right
@@ -187,11 +187,11 @@ widgets:
         type: recent_posts
         # Where should the widget be placed, left or right
         position: left #right
-    #-
+    -
         # Widget name
-        #type: archive
+        type: archive
         # Where should the widget be placed, left or right
-        #position: left #right
+        position: left #right
     #-
         # Widget name
         #type: tag
