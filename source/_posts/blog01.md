@@ -57,7 +57,10 @@ $ git clone https://github.com/theme-next/hexo-theme-next themes/next
 其中 code highlight theme 也可以選。
 我選擇將 `highlight_theme: normal` 改成 `highlight_theme: night eighties`。
 
+在 theme 的 \_config.yml 中把 social 的 github 打開、並且 enable social icon only。把 lazyload 設為 true、把 toc 設為 false（文章目錄拔掉）、把 updated_at 設為 false（編輯文章的時間拔掉）。
+
 最後在 blog 的 \_config.yml 將 `theme: landscape` 改成 `theme: next` 即可。
+
 
 ### Categories
 寫文章前先建立 blog 的 "分類"。之後寫文章時可以把文章歸類。
