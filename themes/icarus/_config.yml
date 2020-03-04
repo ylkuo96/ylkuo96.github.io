@@ -30,7 +30,7 @@ navbar:
     menu:
         #Home: /
         #Archives: /archives
-        #Categories: /categories
+        Categories: /categories
         #Tags: /tags
         About: /about
     # Navigation bar links to be shown on the right
@@ -39,18 +39,18 @@ navbar:
             #icon: fab fa-github
             #url: 'https://github.com/ppoffice/hexo-theme-icarus'
 # Footer section link settings
-footer:
+#footer:
     # Links to be shown on the right of the footer section
-    links:
+    #links:
         #Creative Commons:
             #icon: fab fa-creative-commons
             #url: 'https://creativecommons.org/'
         #Attribution 4.0 International:
             #icon: fab fa-creative-commons-by
             #url: 'https://creativecommons.org/licenses/by/4.0/'
-        Download on GitHub:
-            icon: fab fa-github
-            url: 'https://github.com/ylkuo96'
+        #Download on GitHub:
+            #icon: fab fa-github
+            #url: 'https://github.com/ylkuo96'
 # Article display settings
 article:
     # Code highlight settings
@@ -75,7 +75,8 @@ search:
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment
 comment:
     # Name of the comment plugin
-    type: 
+    type: disqus
+    shortname: yilin-comments
 # Donation entries
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Donation/
 donate:
