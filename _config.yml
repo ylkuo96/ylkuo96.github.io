@@ -8,7 +8,7 @@ subtitle: 'ʕ￫ᴥ￩ʔ'
 description:
 keywords:
 author: yilin
-language: zh-tw
+language: en
 timezone: ''
 
 # URL
@@ -93,7 +93,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next #icarus
+theme: icarus
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
