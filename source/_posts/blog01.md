@@ -1,12 +1,13 @@
 ---
 title: Config My Blog 01
 date: 2020-03-03 16:11:20
-categories: 2020
+categories: blog
 keywords: blog
 tags:
-- hexo
-- github
 - blog
+- github
+- hexo
+- hexo-next
 ---
 
 ## 前言
