@@ -158,7 +158,7 @@ comment: false
 關於網站的 icon （分頁上的 icon），把它換成覺得很有質感的線條。
 用[此網站](https://favicon.io/favicon-generator/)製作而成的。
 這個線條叫做 wavy dash。
-{% img /uploads/images/blog02/icon.png 16 'favicon' %}
+{% img /uploads/images/blog02/icon.png 32 'favicon' %}
 
 ## References
 1. [外星人部落格](oalieno.github.io)
