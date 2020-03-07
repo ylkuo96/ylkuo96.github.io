@@ -84,7 +84,7 @@ gap = 15px
 
 ```yaml icarus/_config.yml
 menu:
-    Home: /
+    #Home: /
     #Archives: /archives
     Categories: /categories
     #Tags: /tags
