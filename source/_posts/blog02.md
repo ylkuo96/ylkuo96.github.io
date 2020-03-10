@@ -160,5 +160,26 @@ comment: false
 這個線條叫做 wavy dash。
 {% img /uploads/images/blog02/icon.png 32 'favicon' %}
 
+## 熊 logo
+```ejs icarus/layout/common/navbar.ejs
+<a class="navbar-item navbar-logo" href="<%- url_for('/') %>">
+<% if (logo && logo.text) { %>
+    <img src="/images/bear.svg" style="display:block;width:25px;height:25px" />
+    <%= logo.text %>
+<% } else { %>
+    <img src="<%- url_for(logo) %>" alt="<%= title %>" height="28">
+<% } %>
+</a>
+```
+
+多加了第三行的 `<img src ... >`，其中 bear.svg 被放置在 icarus/source/images/。
+完成之後會顯示如下圖。
+{% img /uploads/images/blog02/bear.png 250 'bear logo' %}
+
+超級無敵可愛的 logo 啊！！！！！連結點[此](https://www.flaticon.com/free-icon/teddy-bear_1943200)。
+
+最後順便改了一下 blog/source/about/index.md，標示一下此 logo 的 author。
+
 ## References
 1. [外星人部落格](oalieno.github.io)
+2. [logo](https://www.flaticon.com/)
