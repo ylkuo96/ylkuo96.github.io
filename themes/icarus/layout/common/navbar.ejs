@@ -3,6 +3,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="<%- url_for('/') %>">
             <% if (logo && logo.text) { %>
+                <img src="/images/bear.svg" style="display:block;width:25px;height:25px" />
                 <%= logo.text %>
             <% } else { %>
                 <img src="<%- url_for(logo) %>" alt="<%= title %>" height="28">
