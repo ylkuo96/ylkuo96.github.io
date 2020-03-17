@@ -181,5 +181,5 @@ comment: false
 最後順便改了一下 blog/source/about/index.md，標示一下此 logo 的 author。
 
 ## References
-1. [外星人部落格](oalieno.github.io)
+1. [外星人部落格](https://oalieno.github.io/)
 2. [logo](https://www.flaticon.com/)
