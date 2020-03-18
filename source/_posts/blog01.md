@@ -1,5 +1,6 @@
 ---
 title: Config My Blog 01
+toc: true
 date: 2020-03-03 16:11:20
 categories: blog
 keywords: blog

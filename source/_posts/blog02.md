@@ -1,5 +1,6 @@
 ---
 title: Config My Blog 02
+toc: true
 date: 2020-03-05 14:05:38
 categories: blog
 tags:
