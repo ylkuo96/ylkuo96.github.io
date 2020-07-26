@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.1" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Machine Learning Note 01 - yilin&#39;s Blog</title>
+
+
+    <meta name="description" content="前言這個學期下定決心要跟著進度把李宏毅機器學習影片看完並且寫完 15 個作業！於是想說可以邊寫個筆記來記錄一下 :P還有揪了以前交大的同學一起努力一起彼此督促，避免耍廢。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning Note 01">
+<meta property="og:url" content="https://ylkuo96.github.io/2020/03/18/ml01/index.html">
+<meta property="og:site_name" content="yilin&#39;s Blog">
+<meta property="og:description" content="前言這個學期下定決心要跟著進度把李宏毅機器學習影片看完並且寫完 15 個作業！於是想說可以邊寫個筆記來記錄一下 :P還有揪了以前交大的同學一起努力一起彼此督促，避免耍廢。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ylkuo96.github.io/images/og_image.png">
+<meta property="article:published_time" content="2020-03-18T07:57:05.000Z">
+<meta property="article:modified_time" content="2020-07-26T13:53:53.364Z">
+<meta property="article:author" content="yilin">
+<meta property="article:tag" content="ml-note">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ylkuo96.github.io/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/icon.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/bear.svg" style="display:block;width:25px;height:25px" />
+                BLOG ∞
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-9-desktop is-9-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-18T07:57:05.000Z">2020-03-18</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/ml/">ml</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    34 minutes read (About 5109 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Machine Learning Note 01
+            
+        </h1>
+        <div class="content">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>這個學期下定決心要跟著進度把李宏毅機器學習影片看完並且寫完 15 個作業！<br>於是想說可以邊寫個筆記來記錄一下 :P<br>還有揪了以前交大的同學一起努力一起彼此督促，避免耍廢。</p>
+<a id="more"></a>
+
+<p>先貼一下這學期的<a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html">影片進度與作業對照表</a>。</p>
+<img src="/uploads/images/ml01/outline.png" class="" width="800" title="outline">
+
+<p>以下是此篇筆記的影片連結：</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=c9TwBeWAj_U&feature=youtu.be">Introduction</a></li>
+<li><a href="https://www.youtube.com/watch?v=fegAeph9UaA&feature=youtu.be">Regression</a></li>
+<li><a href="https://www.youtube.com/watch?v=D_S6y0Jm6dQ&feature=youtu.be">Basic Concept</a></li>
+</ul>
+<p>接下來就是筆記的內容了！</p>
+<h2 id="What-is-machine-learning"><a href="#What-is-machine-learning" class="headerlink" title="What is machine learning?"></a>What is machine learning?</h2><blockquote>
+<p>丟輸入給機器，機器找一個合適的 function、並輸出答案。</p>
+</blockquote>
+<p>幾個機器學習的例子：</p>
+<ol>
+<li>Speech Recognition: 輸入聲音訊號、輸出字</li>
+<li>Image Recognition: 輸入圖片、輸出這張圖有什麼物件</li>
+<li>Playing GO: 輸入棋盤上黑子白子現在位址、輸出下一步該下什麼位址</li>
+<li>Dialogue System: 輸入對機器說的話、輸出回應</li>
+</ol>
+<h2 id="Function-Type"><a href="#Function-Type" class="headerlink" title="Function Type"></a>Function Type</h2><ol>
+<li>Regression<ul>
+<li>讓機器找一個數值</li>
+<li>ex. 預測隔天某時段的 PM2.5</li>
+</ul>
+</li>
+<li>Classification<ul>
+<li>讓機器做一個選擇 (從兩個或多個 option 中)</li>
+<li>binary<ul>
+<li>輸出只有兩種可能 (yes/no)</li>
+<li>ex. 輸入句子，輸出此句意義是正面/負面</li>
+</ul>
+</li>
+<li>multi-class<ul>
+<li>有 N 種選項，輸出會是其中一種</li>
+<li>ex. 輸入圖片，輸出這是哪種類型的食物</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Generation<ul>
+<li>讓機器學習創造</li>
+<li>生成比較複雜、有結構的物件</li>
+<li>ex. 輸出為翻譯、畫圖等等</li>
+</ul>
+</li>
+</ol>
+<h2 id="Learning-Type"><a href="#Learning-Type" class="headerlink" title="Learning Type"></a>Learning Type</h2><ol>
+<li><p>Supervised Learning</p>
+<ul>
+<li>給機器 labeled training data、以及其 data 對應的答案</li>
+<li>給一 loss function $L$，讓機器評估 function 的好壞<ul>
+<li>loss 越小越好，代表越接近理想的 function  </li>
+</ul>
+</li>
+<li>機器會自動找出 loss 最低的 function</li>
+</ul>
+</li>
+<li><p>Reinforcement Learning</p>
+<ul>
+<li>不需要給機器正確解答，讓機器自己去摸索。根據學習過程中得到的 feedback 來調整學習策略。</li>
+<li>ex. 預測圍棋下一步位置：<ul>
+<li>不需要告訴機器每一個情況最正確落子的位址</li>
+<li>讓機器跟自己下或是機器跟別人下</li>
+<li>機器自己找出適合的策略</li>
+<li>若輸了，機器要自己想辦法去提高正確率</li>
+<li>機器輸或贏會是 reward，此 reward 可以引導機器學習的方向</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Unsupervised Learning</p>
+<ul>
+<li>給機器一堆 unlabeled data 去學 :P</li>
+</ul>
+</li>
+</ol>
+<h2 id="How-can-machine-find-out-our-expected-function"><a href="#How-can-machine-find-out-our-expected-function" class="headerlink" title="How can machine find out our expected function?"></a>How can machine find out our expected function?</h2><p>給一函式尋找範圍（Network Atchitecture），讓機器在此範圍搜索就好。<br>像是只考慮 Linear Function (regression or classification) 或是只考慮 Neural Network (RNN or CNN)。<br>並且使用 Gradient Descent 此種函示尋找方法。</p>
+<h2 id="Research"><a href="#Research" class="headerlink" title="Research"></a>Research</h2><ol>
+<li>Explainable AI<ul>
+<li>機器<strong>解釋</strong>為甚麼選這個答案</li>
+</ul>
+</li>
+<li>Adversarial Attack<ul>
+<li>如果惡意攻擊自動辨識系統會怎樣</li>
+<li>故意增加些刻意的雜訊、針對機器的雜訊，導致機器可能會辨識錯誤</li>
+</ul>
+</li>
+<li>Network Compression<ul>
+<li>有個 model 可以辨識很高的正確率，但他很肥</li>
+<li>要怎麼縮小 network，使得可以放到手機/edge device 上</li>
+</ul>
+</li>
+<li>Anomaly Detection<ul>
+<li>如果放不同種類的東西、怪怪的東西給系統會怎樣</li>
+<li>ex. 放一個動漫人物的圖片給一個專門辨識動物的機器，機器能不能回答：我不知道</li>
+</ul>
+</li>
+<li>Domain Adversarial Learning<ul>
+<li>如果訓練資料跟測試資料很像（distribution 很像），那正確率會很高 =&gt; 假象 :P</li>
+<li>那如果訓練資料跟測試資料分布不一樣的話要怎麼做才能保持一樣高的正確率？</li>
+</ul>
+</li>
+<li>Meta Learning<ul>
+<li>Learn to learn =&gt; 學習如何學習的能力</li>
+<li>ex. 讓程式寫另一個程式/發明另一個演算法</li>
+<li>現今人類設計的機器學習的方式很沒效率，所以期望機器自己找到有效率的方法</li>
+</ul>
+</li>
+<li>Life-long Learning<ul>
+<li>終身學習，同樣叫做 Continuous Learning, Never Ending Learning, Incremental Learning</li>
+<li>讓機器終身學習、不斷學習下去</li>
+<li>學好一個東西就繼續學下一個</li>
+</ul>
+</li>
+</ol>
+<h2 id="Regression"><a href="#Regression" class="headerlink" title="Regression"></a>Regression</h2><p>這邊舉一些 Regression 的例子：</p>
+<ol>
+<li>股票預測：輸入過去十年各種股票起伏資料等等、輸出明天某股票指數</li>
+<li>無人車、自動車：輸入各種 sensor 的 info、輸出方向盤角度</li>
+<li>推薦系統：輸入使用者A和商品B、輸出為使用者A購買商品B的可能性</li>
+<li>預測寶可夢進化後的 CP 值：輸入某一隻寶可夢、輸出其進化後的 CP 值</li>
+</ol>
+<p>以下用寶可夢作為例子：）<br><span style="color:INDIANRED">$f(pokemon) = y$</span></p>
+<p>$x_{cp}$：寶可夢進化前的 CP 值<br>$x_s$：寶可夢屬於哪個物種 ex. 妙挖種子<br>$x_{hp}$：寶可夢生命值<br>$x_w$：寶可夢的重量<br>$x_h$：寶可夢的高度<br>$y$：進化後的 CP 值</p>
+<h2 id="Machine-Learning-Three-Steps"><a href="#Machine-Learning-Three-Steps" class="headerlink" title="Machine Learning Three Steps"></a>Machine Learning Three Steps</h2><blockquote>
+<p>機器學習很 basic 的三步驟！</p>
+</blockquote>
+<ol>
+<li>找一 model/function set</li>
+<li>定義 function set 中某一 function，並估算其好壞</li>
+<li>找出最好的 function</li>
+</ol>
+<h3 id="I-Find-a-Function-Set"><a href="#I-Find-a-Function-Set" class="headerlink" title="(I) Find a Function Set"></a>(I) Find a Function Set</h3><blockquote>
+<p>要找 function set (model)</p>
+</blockquote>
+<p>Q：那，這個 model 應該要長怎樣呢？<br>A：應該要是 input 為寶可夢，output 為進化後的 CP 值的 function</p>
+<p>這邊先假設一個很簡單的 model：<br><span style="color:INDIANRED">$y = b + w \cdot x_{cp}$</span></p>
+<ul>
+<li>其中 w 與 b 這兩個參數可以是任何 value</li>
+<li>填入不同的數字，就得到不同的 function :P </li>
+<li>ex. $f_1 = 10 + 9.0 \cdot x_{cp}$、$f_2 = 9.8 + 9.2 \cdot x_{cp}$<ul>
+<li>有 $\infty$ 種可能的 function</li>
+</ul>
+</li>
+</ul>
+<p>這個很簡單的 model 為 Linear Model：<span style="color:#FF5733">$y=b+\sum{w_ix_i}$</span></p>
+<ul>
+<li>$x_i:$ an attribute of input x（feature）</li>
+<li>$w_i$ 是 weight</li>
+<li>$b$ 是 bias </li>
+</ul>
+<h4 id="Collecting-training-data"><a href="#Collecting-training-data" class="headerlink" title="Collecting training data"></a>Collecting training data</h4><blockquote>
+<p>再找 function 之前，要先蒐集 training data</p>
+</blockquote>
+<ol>
+<li>Squirtle =&gt; Wartortle<ul>
+<li>input $x^1$ 為 Squirtle；output $\hat{y}^1$ 為 979</li>
+</ul>
+</li>
+<li>Eevee =&gt; Sparky<ul>
+<li>input $x^2$ 為 Eevee；output $\hat{y}^2$ 為 1420</li>
+</ul>
+</li>
+<li>…….. 假設蒐集到 10 隻 pokemon 的 data</li>
+</ol>
+<p>有了 training data，就要定義 function 的好壞。</p>
+<h3 id="II-Goodness-of-Function"><a href="#II-Goodness-of-Function" class="headerlink" title="(II) Goodness of Function"></a>(II) Goodness of Function</h3><blockquote>
+<p>定義 function 好壞</p>
+</blockquote>
+<p>定義 Loss Function $L$：<span style="color:#900C3F">$L(f)=L(w,b)$</span></p>
+<ul>
+<li>input: a function</li>
+<li>output: how bad this function is</li>
+</ul>
+<p>也就是說，loss function 在衡量參數的好壞。</p>
+<p>可以自己定義 loss function 的，但是有比較常見的作法 — <strong>估測誤差</strong>：<br><span style="color:#F08080">$L(f)=\sum\limits_1^{10} {(\hat{y}^n - (b + w * x_{cp}^n))^2}$</span></p>
+<ul>
+<li>$\hat{y}^n:$ the real y</li>
+<li>$(b+w \cdot x_{cp}^n):$ estimated y based on input function</li>
+</ul>
+<h3 id="III-Best-Function"><a href="#III-Best-Function" class="headerlink" title="(III) Best Function"></a>(III) Best Function</h3><blockquote>
+<p>在上一步驟已經定好 loss function，可以衡量每一個 function 的好壞了<br>接下來，就是要從這個 set 裡面，挑選出最好的一個 function</p>
+</blockquote>
+<p><span style="color:#BA4A00">$f^* = \arg\min\limits_f L(f)$</span><br><span style="color:#BA4A00">$w^*, b^* = \arg\min\limits_{w,b} L(w,b))$</span></p>
+<p>所以，要做的事情是就是找到一組 $w$ &amp; $b$ 使得 loss 為最小。</p>
+<ul>
+<li>用線性代數可以找到 Closed-Form Solution</li>
+<li>或是用 Gradient Descent</li>
+</ul>
+<h2 id="Gradient-Descent"><a href="#Gradient-Descent" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h2><blockquote>
+<p>只要 L 可微分，就能拿來找可能比較好的 solution</p>
+</blockquote>
+<p>首先，先來看比較簡單的情況。<br>若 loss function 只有一個參數，Gradient Descent 要如何求解？</p>
+<h3 id="a-Loss-function-with-only-one-parameter-w"><a href="#a-Loss-function-with-only-one-parameter-w" class="headerlink" title="a) Loss function with only one parameter $w$"></a>a) Loss function with only one parameter $w$</h3><blockquote>
+<p>$w^* = \arg \min\limits_w L(w))$</p>
+</blockquote>
+<p>以下步驟：</p>
+<ol>
+<li>Randomly pick an initial value $w^0$</li>
+<li>Compute $\frac{dL}{dw}|_{w= w^0}$ <ul>
+<li>計算切線斜率</li>
+<li>若為負，表示左邊 loss 比右邊 loss 高 =&gt; 增加 $w$ 值</li>
+<li>若為正，表示右邊 loss 比較高 =&gt; 減少 $w$ 值</li>
+</ul>
+</li>
+<li>Update: <span style="color:#3C9954">$w^1 \gets w^0 - \eta *\dfrac{dL}{dw_0}$</span></li>
+<li>Repeat 2), 3) …<ul>
+<li>Compute $\frac{dL}{dw}|_{w=w^1}$</li>
+<li>Update: $w^2 \gets w^1 - \eta *\dfrac{dL}{dw_1}$</li>
+<li>…</li>
+</ul>
+</li>
+<li>Continue T times, then get the local min :)</li>
+</ol>
+<p>以上<strong>更新的幅度</strong>有多大取決於兩件事情：</p>
+<ol>
+<li>微分值 $\frac{dL}{dw}$ 有多大<ul>
+<li>如果越大表示越陡峭，則移動距離越大；反之越小</li>
+</ul>
+</li>
+<li>常數項 learning rate $\eta$<ul>
+<li>是事先定好的數字；若定越大，參數更新的幅度就越大</li>
+</ul>
+</li>
+</ol>
+<p>經過非常多次 iteration 更新參數後，會到 local min 的地方：</p>
+<ul>
+<li>也就是微分是 0 的地方</li>
+<li>但幸運的是，在 linear regression 上沒有 local min :P </li>
+</ul>
+<p>若 $L$ 有兩個參數呢 $w, b$ ？ </p>
+<h4 id="在進入情境-b-之前，先複習一下偏微分ㄅㄅㄅ-P"><a href="#在進入情境-b-之前，先複習一下偏微分ㄅㄅㄅ-P" class="headerlink" title="在進入情境 b 之前，先複習一下偏微分ㄅㄅㄅ :P"></a>在進入情境 b 之前，先複習一下偏微分ㄅㄅㄅ :P</h4><p>由於 <span style="color:#F0B27A">$L = \sum{(\hat{y}^n - (b + w * x_{cp}^n))^2}$</span>，所以：</p>
+<ol>
+<li>$w$ 對 $L$ 的偏微分：<ul>
+<li>$\dfrac{\partial L}{\partial w} \vert_{w=w^0,b=b^0} = \sum{2(\hat{y}^n - (b + w * x_{cp}^n))*(-x_{cp}^n)}$</li>
+</ul>
+</li>
+<li>$b$ 對 $L$ 的偏微分：<ul>
+<li>$\dfrac{\partial L}{\partial b}\vert_{w=w^0,b=b^0} = \sum{2(\hat{y}^n - (b + w * x_{cp}^n))*(-1)}$</li>
+</ul>
+</li>
+</ol>
+<p>Q：那，Gradient $\nabla L$ 是什麼呢？<br>A：把 $w$ 對 $L$ 的偏微分和 $b$ 對 $L$ 的偏微分排成一個 vector</p>
+<img src="/uploads/images/ml01/gd.png" class="" width="200" title="gd">
+
+<h3 id="b-Loss-function-with-two-parameters-w-b"><a href="#b-Loss-function-with-two-parameters-w-b" class="headerlink" title="b) Loss function with two parameters $w, b$"></a>b) Loss function with two parameters $w, b$</h3><blockquote>
+<p>$w^*, b^* = \arg \min\limits_{w,b} L(w,b))$</p>
+</blockquote>
+<p>以下步驟其實大同小異：</p>
+<ol>
+<li>Randomly pick an initial value $w^0, b^0$</li>
+<li>Compute <ul>
+<li>$\dfrac{\partial L}{\partial w}|_{w=w^0,b=b^0}$</li>
+<li>$\dfrac{\partial L}{\partial b}|_{w=w^0,b=b^0}$</li>
+</ul>
+</li>
+<li>Update<ul>
+<li><span style="color:#0DB8D3">$w^1 \gets w^0 - \eta * \dfrac{\partial L}{\partial w}|_{w=w^0,b=b^0}$</span> </li>
+<li><span style="color:#00A6F4">$b^1 \gets b^0 - \eta * \dfrac{\partial L}{\partial b}|_{w=w^0,b=b^0}$</span> </li>
+</ul>
+</li>
+<li>Repeat 2), 3) …<ul>
+<li>Compute: <ul>
+<li>$\dfrac{\partial L}{\partial w}|_{w=w^1,b=b^1}$</li>
+<li>$\dfrac{\partial L}{\partial b}|_{w=w^1,b=b^1}$</li>
+</ul>
+</li>
+<li>Update: $w^2$ and $b^2$</li>
+<li>…</li>
+</ul>
+</li>
+<li>Continue T times, then get the local min :D</li>
+</ol>
+<p>關於 local min 的問題：<br>Q：Gradient Descent 可以找到 local min，但會不會找不到 global min？<br>A：但是！In linear regression, loss function $L$ 是 convex 的，它並沒有 local min optimal，他就是 global min！</p>
+<h2 id="Improvement"><a href="#Improvement" class="headerlink" title="Improvement"></a>Improvement</h2><blockquote>
+<p>得到 model 之後，使用在 testing data，並試著改善。</p>
+</blockquote>
+<h3 id="Model-Complexity"><a href="#Model-Complexity" class="headerlink" title="Model Complexity"></a>Model Complexity</h3><p>假設經過上述 3 步驟後，得到最終 model 為 $y=-188.4+2.7 \cdot x_{cp}$。</p>
+<p>我們又抓了另外 10 隻 pokemon 當成 testing data，然後計算每個 data point 離 function 最近的距離 $e^i$，也就是 error。</p>
+<p>假設：</p>
+<ol>
+<li>average error on training data $= 31.9$</li>
+<li>average error on testing data $= \sum\limits_n^{10}e^n = 35.0$</li>
+</ol>
+<p>其實可以看的出來 testing data 與 training data 的分布是差不多的，因為 performance 感覺起來是不相上下的。</p>
+<p>從下圖（testing data）結果看來，model 可能不是直線這麼簡單，可能需要改善。</p>
+<img src="/uploads/images/ml01/res.png" class="" width="300" title="result">
+
+<p>Q：那要如何改善呢？<br>A：<strong>需要複雜一點的 model，像是引入二次式之類的。</strong></p>
+<p>於是重新設計 model 為 <span style="color:#F39C12">$y=b+w_1 \cdot x_{cp}+w_2 \cdot (x_{cp})^2$</span>。<br>然後再重複剛剛的步驟，用 Gradient Descent 找出最好的參數。</p>
+<p>假設，找到的最好的 function 是 $y = -10.3 + x_{cp} + 2.7 \cdot 10^{-3} \cdot (x_{cp})^2$，並計算 testing data 的 error。</p>
+<ol>
+<li>average error on training data $= 15.4$</li>
+<li>average error on testing data $= 18.4$</li>
+</ol>
+<p>觀察下圖（testing data）得知，testing data 與二次式更 fit 一點。</p>
+<img src="/uploads/images/ml01/2t.png" class="" width="300" title="improvement">
+
+<blockquote>
+<p>但是！！也不能太太太複雜，否則會適得其反。</p>
+</blockquote>
+<p>像是若重新設計 model 為四次式 <span style="color:#EC7063">$y=b+w_1 \cdot x_{cp}+w_2 \cdot (x_{cp})^2 + w_3 \cdot (x_{cp})^3 + w_4 \cdot (x_{cp})^4$</span>，找到的最好 model 之後，並計算 error。</p>
+<ol>
+<li>average error on training data $= 14.9$</li>
+<li>average error on testing data $= 28.8$</li>
+</ol>
+<p>下圖為 model complexity 與 error 之間的比較。</p>
+<img src="/uploads/images/ml01/compare.png" class="" width="400" title="compare">
+
+<p>可以看到 model 複雜度越高，對 training data 的 error 會越低，但對 testing data 不減反增，這就是 <strong>Overfitting</strong>。</p>
+<p>所以，選擇適當的 model 就好，不需要太複雜。</p>
+<h3 id="Hidden-Factors"><a href="#Hidden-Factors" class="headerlink" title="Hidden Factors"></a>Hidden Factors</h3><p>蒐集了更多筆資料之後，可以發現，物種這個 factor 深深影響著 output，每個物種的 model 貌似長的都不太一樣。</p>
+<img src="/uploads/images/ml01/100.png" class="" width="300" title="more data">
+
+<p>只考慮 $x_{cp}$ 是不夠的，於是重新設計 model。</p>
+<ol>
+<li>if $x_s =$ Pidgey: $y = b_1 + w_1 \cdot x_{cp}$</li>
+<li>if $x_s =$ Weedle: $y = b_2 + w_2 \cdot x_{cp}$</li>
+<li>if $x_s =$ Caterpie: $y = b_3 + w_3 \cdot x_{cp}$</li>
+<li>if $x_s =$ Eevee: $y = b_4 + w_4 \cdot x_{cp}$</li>
+</ol>
+<p>Q：阿要怎麼把 if 放到 linear model 裡面？<br>A：改寫成以下 linear function</p>
+<p><span style="color:#F8C471"> $y = b_1 \cdot \delta(x_s = Pidgey) + w_1 \cdot \delta(x_s = Pidgey) \cdot x_{cp}$<br>$\mbox{ }\mbox{ }\mbox{ } +b_2 \cdot \delta(x_s = Weedle) + w_2 \cdot \delta(x_s = Weedle) \cdot x_{cp}$<br>$\mbox{ }\mbox{ }\mbox{ } +b_3 \cdot \delta(x_s = Caterpie) + w_3 \cdot \delta(x_s = Caterpie) \cdot x_{cp}$<br>$\mbox{ }\mbox{ }\mbox{ } +b_4 \cdot \delta(x_s = Eevee) + w_4 \cdot \delta(x_s = Eevee) \cdot x_{cp}$<br></span></p>
+<p>其中 delta function $\delta$ 的值為 </p>
+<ul>
+<li>1, if $x_s$ = Pidgey</li>
+<li>0, otherwise</li>
+</ul>
+<p>假設目前物種為 Pidgey，則看到的 function 會為 $y = b_1 + w_1 \cdot x_{cp}$；也就是各物種的 function 都不一樣。</p>
+<p>再用 Gradient Descent 找到最好的參數、並且計算 error：</p>
+<ol>
+<li>average error on training data $= 3.8$</li>
+<li>average error on testing data $= 14.3$ </li>
+</ol>
+<p>結果為下圖（testing data），比剛剛的結果都更好。</p>
+<img src="/uploads/images/ml01/improv.png" class="" width="300" title="improvement">
+
+<p>但是好像還有其他地方能夠改善，可能會是 $x_h, x_w, x_{hp}$ 等等其他的因素。<br>如果沒有 domain knowledge，不知道那個 attribute 比較跟結果有關，則可以通通丟進去設計 model。</p>
+<ol>
+<li>if $x_s =$ Pidgey: $y’ = b_1 + w_1 \cdot x_{cp} + w_5 \cdot (x_{cp})^2$</li>
+<li>if $x_s =$ Weedle: $y’ = b_2 + w_2 \cdot x_{cp} + w_6 \cdot (x_{cp})^2$</li>
+<li>if $x_s =$ Caterpie: $y’ = b_3 + w_3 \cdot x_{cp} + w_7 \cdot (x_{cp})^2$</li>
+<li>if $x_s =$ Eevee: $y’ = b_4 + w_4 \cdot x_{cp} + w_8 \cdot (x_{cp})^2$</li>
+</ol>
+<p>得到最終 model 為：<br><span style="color:#F8C471"> $y = y’ + w_9 \cdot x_{hp} + w_{10} \cdot (x_{hp})^2 + w_{11} \cdot x_h + w_{12} \cdot (x_h)^2 + w_{13} \cdot x_w + w_{14} \cdot (x_w)^2$ </span></p>
+<p>計算 error：</p>
+<ol>
+<li>average error on training data $= 1.9$</li>
+<li>average error on testing data $= 102.3$</li>
+</ol>
+<p>在 testing data 的結果太糟糕啦～～～～～<br>可以用 <strong>regularization</strong> 解決！</p>
+<h2 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h2><blockquote>
+<p>重新定義 loss function $L$，把一些 knowledge 放進去，找到比較好的 function。</p>
+</blockquote>
+<p>一開始的 loss function 只考慮了 prediction 的 error 這件事：<br>$y = b + \sum w_i x_i$<br>$L = \sum\limits_n(\hat{y}^n - (b + \sum w_i x_i))^2$</p>
+<p>Regularization 就是加上 <span style="color:#F08080">額外的 term</span> 來改善 loss function：<br>$L = \sum\limits_n \left ( \hat{y}^n - \left ( b + \sum w_i x_i \right ) \right )^2 +$ <span style="color:#F08080"> $\lambda \sum (w_i)^2$</span></p>
+<p>現在分別看兩項的意思：</p>
+<ol>
+<li>prediction error：很直觀，錯誤越少越好</li>
+<li>$\lambda \sum (w_i)^2$：參數的值越小越接近 0 越好</li>
+</ol>
+<p>Q：WHY 參數越小越好？<br>A：參數越接近 0，function 也就越平滑，也就是說 output 對 input 的變化越不敏感。</p>
+<p>$y = b + \sum w_i x_i$<br>當 input 增加了 $\Delta x_i$，output 會增加 $w_i \Delta x_i$。<br>所以當 input 改變，$w_i$ 越小，output 越不容易有變化。</p>
+<p>Q：為何喜歡比較 smooth 的 function？<br>A：假設 noise 影響了 input，function 會受到較少的影響，給我們比較好的結果。</p>
+<p>下圖為加入 regularization 的實驗結果：</p>
+<img src="/uploads/images/ml01/reg.png" class="" width="400" title="regularization">
+
+<p>當 $\lambda$ 越大，考慮 smooth 那項 term 的影響力越大，所以找到的 function 就越平滑。</p>
+<p>當 $\lambda$ 越大，會呈現兩種現象：</p>
+<ol>
+<li>training data error 越大</li>
+<li>testing data error 可能越小<ul>
+<li>但太大又會反升，例如平滑到像是一條直線 :O </li>
+</ul>
+</li>
+</ol>
+<p>Q：為何 function 越平滑，training data error 會越大？<br>A：因為越傾向於考慮 w 的數值，減少考慮 error。</p>
+<p>Q：function 要有多 smooth？<br>A：調 $\lambda$ 得到最好的 model</p>
+<blockquote>
+<p>note:: 在做 regularization 的時候不用考慮 bias $b$。<br>因為調整 bias 值只是上下移動 function，對平滑值沒有關係。</p>
+</blockquote>
+<h2 id="Where-does-the-error-come-from"><a href="#Where-does-the-error-come-from" class="headerlink" title="Where does the error come from?"></a>Where does the error come from?</h2><blockquote>
+<p>error 有兩個來源：bias、variance<br>所以要找出 error 來源，才能對症下藥！</p>
+</blockquote>
+<p>只有 God 知道理想的 function $\hat{f}$ 長怎樣，而我們只能從 traning data 找到我們理想中的 $f^*$。</p>
+<p>所以 $\hat{f}$ 與 $f^*$ 之間的差距就是 error，來自於 bias 或 variance。</p>
+<h2 id="Bias-and-Variance-of-Estimator"><a href="#Bias-and-Variance-of-Estimator" class="headerlink" title="Bias and Variance of Estimator"></a>Bias and Variance of Estimator</h2><blockquote>
+<p>Bias of Estimator</p>
+</blockquote>
+<p>假設現在有一 variable $x$：</p>
+<ul>
+<li>the mean of $x$ is $\mu$</li>
+<li>the variance of $x$ is $\delta^2$</li>
+</ul>
+<p>若要估測 mean $\mu$ 的話：</p>
+<ol>
+<li>首先先 sample N 個點: ${x^1, x^2, …, x^N}$</li>
+<li>再算 N 個點的平均值 $m = \frac{1}{N} \sum\limits_n x^n \neq \mu$ （不見得一樣）</li>
+<li>於是做重複多次1. 2. 步驟，得到多次 $m_i$</li>
+<li>再算期望值 $E[m] = E[\frac{1}{N} \sum\limits_n x^n] = \frac{1}{N} \sum\limits_nE[x^n] = \mu$</li>
+</ol>
+<p>所以可以用 m 來 estimate $\mu$，m 是 unbiased 的，因為其期望值會正好與 $\mu$ 相等！</p>
+<p>若 N 較大，m 會較集中；反之較分散。</p>
+<blockquote>
+<p>Variance of Estimator</p>
+</blockquote>
+<p>若要估測 variance $\delta^2$ 的話：</p>
+<ol>
+<li>$s^2 = \frac{1}{N} \sum\limits_n (x^n-m)^2$</li>
+<li>同上面 sample 多次、得到多個 m、算出多個 $s_i$</li>
+<li>期望值 $E[s^2] = \frac{N-1}{N} \delta^2 \neq \delta^2$</li>
+</ol>
+<p>$s^2$ 為 biased estimator，因為其期望值並不會等於$\delta^2$。</p>
+<p>若 N 較大，$s^2$ 與 $\delta^2$ 其之間差距會更小。</p>
+<h2 id="Estimate-the-real-function-hat-f"><a href="#Estimate-the-real-function-hat-f" class="headerlink" title="Estimate the real function $\hat{f}$"></a>Estimate the real function $\hat{f}$</h2><p>取決於兩件事：</p>
+<ol>
+<li>是否瞄準正中心 =&gt; bias<ul>
+<li>做多次實驗得到多個 $f^*$，算出期望值 $E[f^*] = \bar{f}$</li>
+<li>若 $\bar{f}$ 不是散佈於 $\hat{f}$ 附近的話代表有偏差 bias。</li>
+</ul>
+</li>
+<li>偏移 =&gt; variance<ul>
+<li>每次 $f^*$ 與 $\bar{f}$ 的距離</li>
+</ul>
+</li>
+</ol>
+<img src="/uploads/images/ml01/bv.png" class="" width="300" title="bias and variance">
+<p>有四種情況：</p>
+<ul>
+<li>左上：bias 小、vaiance 小。<ul>
+<li>此為最理想的狀況。</li>
+</ul>
+</li>
+<li>左下：bias 大、variance 小。<ul>
+<li>每次找的 $f^*$ 都很像，但都集中在錯誤位置。</li>
+</ul>
+</li>
+<li>右上：bias 小、variance 大。<ul>
+<li>瞄準對，但每次 $f^*$ 都差很多。</li>
+</ul>
+</li>
+<li>右下：bias 多、variance 大。</li>
+</ul>
+<h2 id="Model-vs-Variance"><a href="#Model-vs-Variance" class="headerlink" title="Model vs Variance"></a>Model vs Variance</h2><blockquote>
+<p>以 model 複雜度來說，越簡單 variance 越小。</p>
+</blockquote>
+<p>ex. $y = b + w * x_{cp}$ vs $y = b + w_1 * x_{cp} + w_2 * (x_{cp})^2 …$</p>
+<img src="/uploads/images/ml01/mv.png" class="" width="400" title="model and variance">
+
+<p>Q：WHY?<br>A：因為越簡單的 model 受到不同 data 的影響較小。</p>
+<h2 id="Model-vs-Bias"><a href="#Model-vs-Bias" class="headerlink" title="Model vs Bias"></a>Model vs Bias</h2><blockquote>
+<p>以 model 複雜度來說，越簡單 bias 越大。</p>
+</blockquote>
+<p>$E[f^*] = \bar{f}$</p>
+<p>若 bias 大，表示 $\bar{f}$ 與 $\hat{f}$ 有距離。<br>若 bias 小，表示 $\bar{f}$ 與 $\hat{f}$ 是靠近的。</p>
+<ol>
+<li>black curve: the true function $\hat{f}$</li>
+<li>red curves: 5000 $f^*$</li>
+<li>blue curve: average of 5000 $f^* = \bar{f}$</li>
+</ol>
+<p>若為一次方的 model：</p>
+<img src="/uploads/images/ml01/mb1.png" class="" width="300" title="model and bias">
+<p>$\bar{f}$ 與 $\hat{f}$ 較遠。</p>
+<p>若為五次方的 model：</p>
+<img src="/uploads/images/ml01/mb2.png" class="" width="300" title="model and bias">
+<p>$\bar{f}$ 與 $\hat{f}$ 是接近的。</p>
+<h2 id="Model-vs-Variance-vs-Bias"><a href="#Model-vs-Variance-vs-Bias" class="headerlink" title="Model vs Variance vs Bias"></a>Model vs Variance vs Bias</h2><p>複雜度較小的 model：</p>
+<ul>
+<li>bias 大、但 variance 小</li>
+</ul>
+<p>複雜度較大的 model：</p>
+<ul>
+<li>bias 小、但 variance 大</li>
+</ul>
+<p>因為 model 為一個範圍的 function set。<br>當定義好一 model，就已經設定好說最好的 function 就只能從那個範圍內挑出來。</p>
+<p>若 model 較簡單，space 較小，可能根本就沒有包含 target $\hat{f}$。<br>若 model 較複雜，space 較大，比較有機會包含到 target $\hat{f}$。</p>
+<p>總結為下圖：</p>
+<img src="/uploads/images/ml01/summary.png" class="" width="400" title="summary">
+
+<h3 id="Overfitting"><a href="#Overfitting" class="headerlink" title="Overfitting"></a>Overfitting</h3><p>若 error 來自於 variance 大：</p>
+<ul>
+<li>Overfitting</li>
+<li>If can fir the training data, but large error on testing data, then probably have large variance</li>
+</ul>
+<p>解法：</p>
+<ul>
+<li><strong>More data</strong><ul>
+<li>very effective, but not always practical :(</li>
+</ul>
+</li>
+<li>Generate our own training data<ul>
+<li>ex. image recognition：把圖片旋轉，就多一倍的 data 了</li>
+<li>ex. speech recognition：變聲器翻轉男女聲</li>
+<li>ex. language understanding task：英文翻成中文 :P</li>
+</ul>
+</li>
+<li>Regularization<ul>
+<li>在原來的 loss function 裡面多加一項，希望參數越小越好、曲線越 smooth 越好</li>
+<li>但 bias 可能會變大，所以 weight 要調好，要取得 bias 與 variance 間的平衡</li>
+</ul>
+</li>
+</ul>
+<h3 id="Underfitting"><a href="#Underfitting" class="headerlink" title="Underfitting"></a>Underfitting</h3><p>若 error 來自於 bias 大：</p>
+<ul>
+<li>Underfitting</li>
+<li>If model cannot even fit the training examples, then have large bias</li>
+</ul>
+<p>解法： Redesign Model</p>
+<ul>
+<li>Add more features as input</li>
+<li>A more complex model</li>
+</ul>
+<h2 id="Model-Selection"><a href="#Model-Selection" class="headerlink" title="Model Selection"></a>Model Selection</h2><blockquote>
+<p>There is usually a trade-off between bias and variance<br>Select a model that balances two kinds of error to minimize total error </p>
+</blockquote>
+<p>WHAT WE SHOULD NOT DO:<br>我們不該拿手上有的 testing set 去 validate 我們的 model。<br>因為自己手上擁有的 testing set 會有自己的一個 bias。</p>
+<p>所以，要 Cross Validation！</p>
+<h3 id="Cross-Validation"><a href="#Cross-Validation" class="headerlink" title="Cross Validation"></a>Cross Validation</h3><p>把手中有的 training set 分成兩組：</p>
+<ul>
+<li>training set<ul>
+<li>得出 model1, model2, model3</li>
+</ul>
+</li>
+<li>validation set<ul>
+<li>validate 出哪一個 model performance 較好 </li>
+</ul>
+</li>
+</ul>
+<p>若假設得出最好的 model 是 model3，還可以 combine training set 與 validation set，並用在 model3 上再 train 一次。</p>
+<p>接下來，就用 (public) tesint data 去測試。<br><strong>但不建議測完 tesing data 後回去 tune model，因為這樣又會把 testing data 的 bias 考慮進去。</strong><br>也就是說，此舉動是 make public testing set better than private testing set；在 public testing set 中的 performance 無法反映在 private testing set 上。</p>
+<p>若擔心 validation set 怪怪的，有 bias，則可以做 N-fold Cross Validation。</p>
+<h3 id="N-fold-Cross-Validation"><a href="#N-fold-Cross-Validation" class="headerlink" title="N-fold Cross Validation"></a>N-fold Cross Validation</h3><p>把 training set 分成 N 份：</p>
+<ul>
+<li>training set (N-1)</li>
+<li>validation set (1)</li>
+</ul>
+<p>一直輪流讓其中一份當 validation set。<br>選出一 model 後，用完整的 training set 再去 train 一次此 model。</p>
+<p>Example：<br>假設現在有 model1, model2, model3，且現在使用 3-fold Cross Validation。<br>data 被分為 [data0, data1, data2] 三份。</p>
+<p>會有三種情況：</p>
+<ol>
+<li>train = [data0, data1]; val = [data2]</li>
+<li>train = [data0, data2]; val = [data1]</li>
+<li>train = [data1, data2]; val = [data0]</li>
+</ol>
+<p>分別使用每一種 model，套用在這三種情形，得出每一個 model 的 average error。</p>
+<p>假設 model1 表現最好，再用此完整的 training set 去 train model1。</p>
+<p>最後，再去測 testing set。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/ml/" rel="tag">ml</a>, <a class="has-link-grey -link" href="/tags/note/" rel="tag">note</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/07/26/mood01/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Hello Again</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/05/blog02/">
+                <span class="level-item">Config My Blog 02</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://ylkuo96.github.io/2020/03/18/ml01/';
+        this.page.identifier = '2020/03/18/ml01/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'yilin-comments' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-3-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="/images/cute.jpg" alt="yilin">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        yilin
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        ʕ￫ᴥ￩ʔ
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Taipei</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            4
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            3
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            7
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/ylkuo96">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    Catalogue
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#前言">
+        <span class="has-mr-6">1</span>
+        <span>前言</span>
+        </a></li><li>
+        <a class="is-flex" href="#What-is-machine-learning">
+        <span class="has-mr-6">2</span>
+        <span>What is machine learning?</span>
+        </a></li><li>
+        <a class="is-flex" href="#Function-Type">
+        <span class="has-mr-6">3</span>
+        <span>Function Type</span>
+        </a></li><li>
+        <a class="is-flex" href="#Learning-Type">
+        <span class="has-mr-6">4</span>
+        <span>Learning Type</span>
+        </a></li><li>
+        <a class="is-flex" href="#How-can-machine-find-out-our-expected-function">
+        <span class="has-mr-6">5</span>
+        <span>How can machine find out our expected function?</span>
+        </a></li><li>
+        <a class="is-flex" href="#Research">
+        <span class="has-mr-6">6</span>
+        <span>Research</span>
+        </a></li><li>
+        <a class="is-flex" href="#Regression">
+        <span class="has-mr-6">7</span>
+        <span>Regression</span>
+        </a></li><li>
+        <a class="is-flex" href="#Machine-Learning-Three-Steps">
+        <span class="has-mr-6">8</span>
+        <span>Machine Learning Three Steps</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#I-Find-a-Function-Set">
+        <span class="has-mr-6">8.1</span>
+        <span>(I) Find a Function Set</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Collecting-training-data">
+        <span class="has-mr-6">8.1.1</span>
+        <span>Collecting training data</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#II-Goodness-of-Function">
+        <span class="has-mr-6">8.2</span>
+        <span>(II) Goodness of Function</span>
+        </a></li><li>
+        <a class="is-flex" href="#III-Best-Function">
+        <span class="has-mr-6">8.3</span>
+        <span>(III) Best Function</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Gradient-Descent">
+        <span class="has-mr-6">9</span>
+        <span>Gradient Descent</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#a-Loss-function-with-only-one-parameter-w">
+        <span class="has-mr-6">9.1</span>
+        <span>a) Loss function with only one parameter $w$</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#在進入情境-b-之前，先複習一下偏微分ㄅㄅㄅ-P">
+        <span class="has-mr-6">9.1.1</span>
+        <span>在進入情境 b 之前，先複習一下偏微分ㄅㄅㄅ :P</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#b-Loss-function-with-two-parameters-w-b">
+        <span class="has-mr-6">9.2</span>
+        <span>b) Loss function with two parameters $w, b$</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Improvement">
+        <span class="has-mr-6">10</span>
+        <span>Improvement</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Model-Complexity">
+        <span class="has-mr-6">10.1</span>
+        <span>Model Complexity</span>
+        </a></li><li>
+        <a class="is-flex" href="#Hidden-Factors">
+        <span class="has-mr-6">10.2</span>
+        <span>Hidden Factors</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Regularization">
+        <span class="has-mr-6">11</span>
+        <span>Regularization</span>
+        </a></li><li>
+        <a class="is-flex" href="#Where-does-the-error-come-from">
+        <span class="has-mr-6">12</span>
+        <span>Where does the error come from?</span>
+        </a></li><li>
+        <a class="is-flex" href="#Bias-and-Variance-of-Estimator">
+        <span class="has-mr-6">13</span>
+        <span>Bias and Variance of Estimator</span>
+        </a></li><li>
+        <a class="is-flex" href="#Estimate-the-real-function-hat-f">
+        <span class="has-mr-6">14</span>
+        <span>Estimate the real function $\hat{f}$</span>
+        </a></li><li>
+        <a class="is-flex" href="#Model-vs-Variance">
+        <span class="has-mr-6">15</span>
+        <span>Model vs Variance</span>
+        </a></li><li>
+        <a class="is-flex" href="#Model-vs-Bias">
+        <span class="has-mr-6">16</span>
+        <span>Model vs Bias</span>
+        </a></li><li>
+        <a class="is-flex" href="#Model-vs-Variance-vs-Bias">
+        <span class="has-mr-6">17</span>
+        <span>Model vs Variance vs Bias</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Overfitting">
+        <span class="has-mr-6">17.1</span>
+        <span>Overfitting</span>
+        </a></li><li>
+        <a class="is-flex" href="#Underfitting">
+        <span class="has-mr-6">17.2</span>
+        <span>Underfitting</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Model-Selection">
+        <span class="has-mr-6">18</span>
+        <span>Model Selection</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Cross-Validation">
+        <span class="has-mr-6">18.1</span>
+        <span>Cross Validation</span>
+        </a></li><li>
+        <a class="is-flex" href="#N-fold-Cross-Validation">
+        <span class="has-mr-6">18.2</span>
+        <span>N-fold Cross Validation</span>
+        </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/blog/">
+            <span class="level-start">
+                <span class="level-item">blog</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/ml/">
+            <span class="level-start">
+                <span class="level-item">ml</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/mood/">
+            <span class="level-start">
+                <span class="level-item">mood</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/07/26/mood01/" class="media-left">
+
+                <!--
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello Again">
+                </p>
+                -->
+
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-26T13:21:03.000Z">2020-07-26</time></div>
+                    <a href="/2020/07/26/mood01/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello Again</a>
+
+                    <!-- 
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/mood/">mood</a>
+                    </p>
+                    -->
+
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/18/ml01/" class="media-left">
+
+                <!--
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Machine Learning Note 01">
+                </p>
+                -->
+
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-18T07:57:05.000Z">2020-03-18</time></div>
+                    <a href="/2020/03/18/ml01/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Machine Learning Note 01</a>
+
+                    <!-- 
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/ml/">ml</a>
+                    </p>
+                    -->
+
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/05/blog02/" class="media-left">
+
+                <!--
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Config My Blog 02">
+                </p>
+                -->
+
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-05T06:05:38.000Z">2020-03-05</time></div>
+                    <a href="/2020/03/05/blog02/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Config My Blog 02</a>
+
+                    <!-- 
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/blog/">blog</a>
+                    </p>
+                    -->
+
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/03/blog01/" class="media-left">
+
+                <!--
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Config My Blog 01">
+                </p>
+                -->
+
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-03T08:11:20.000Z">2020-03-03</time></div>
+                    <a href="/2020/03/03/blog01/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Config My Blog 01</a>
+
+                    <!-- 
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/blog/">blog</a>
+                    </p>
+                    -->
+
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+
+                
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    BLOG ∞
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 yilin&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://ylkuo96.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

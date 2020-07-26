@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.1" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Config My Blog 01 - yilin&#39;s Blog</title>
+
+
+    <meta name="description" content="前言最近看很多大神同學都推薦 hexo 這個 Blog 框架，一時興起想說那就來寫一下 blog 吧！記得之前只有在國高中的時候用過無名寫過文章，還蠻好奇以前的自己究竟寫了什麼東西 XD。因為覺得最近的自己腦袋蠻空泛的，希望藉著寫一些部落格文章來 refresh 一下，同時也記錄各種生活中的大小事。 這次使用了 Hexo 這個 blog 框架。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Config My Blog 01">
+<meta property="og:url" content="https://ylkuo96.github.io/2020/03/03/blog01/index.html">
+<meta property="og:site_name" content="yilin&#39;s Blog">
+<meta property="og:description" content="前言最近看很多大神同學都推薦 hexo 這個 Blog 框架，一時興起想說那就來寫一下 blog 吧！記得之前只有在國高中的時候用過無名寫過文章，還蠻好奇以前的自己究竟寫了什麼東西 XD。因為覺得最近的自己腦袋蠻空泛的，希望藉著寫一些部落格文章來 refresh 一下，同時也記錄各種生活中的大小事。 這次使用了 Hexo 這個 blog 框架。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ylkuo96.github.io/images/og_image.png">
+<meta property="article:published_time" content="2020-03-03T08:11:20.000Z">
+<meta property="article:modified_time" content="2020-07-26T13:53:53.363Z">
+<meta property="article:author" content="yilin">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ylkuo96.github.io/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/icon.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/bear.svg" style="display:block;width:25px;height:25px" />
+                BLOG ∞
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-9-desktop is-9-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-03T08:11:20.000Z">2020-03-03</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/blog/">blog</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1025 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Config My Blog 01
+            
+        </h1>
+        <div class="content">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近看很多大神同學都推薦 hexo 這個 Blog 框架，一時興起想說那就來寫一下 blog 吧！記得之前只有在國高中的時候用過無名寫過文章，還蠻好奇以前的自己究竟寫了什麼東西 XD。因為覺得最近的自己腦袋蠻空泛的，希望藉著寫一些部落格文章來 refresh 一下，同時也記錄各種生活中的大小事。</p>
+<p>這次使用了 Hexo 這個 blog 框架。</p>
+<a id="more"></a>
+
+<h2 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite"></a>Prerequisite</h2><ol>
+<li>Node.js</li>
+<li>Git</li>
+</ol>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p><code>$ npm install -g hexo-cli</code></p>
+<h2 id="Create-a-blog"><a href="#Create-a-blog" class="headerlink" title="Create a blog"></a>Create a blog</h2><p>建立 hexo directory、並在此 directory 安裝好 npm 套件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog</span><br><span class="line">$ cd blog</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+
+<h2 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h2><blockquote>
+<p>待補充完整</p>
+</blockquote>
+<p>_config.yml</p>
+<ul>
+<li>網頁的整個配置設定。</li>
+</ul>
+<p>source/</p>
+<ul>
+<li>_posts 是放部落格文章的地方。</li>
+</ul>
+<p>themes/</p>
+<ul>
+<li>blog 的主題樣式。</li>
+</ul>
+<h2 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h2><h3 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h3><p>設置部落格主題為 next。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd blog</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+<p>其中有四種 schema 可以選。<br>在 theme 中的 _config.yml 搜尋 scheme 選擇想要的即可，在這邊選擇了 Pisces。</p>
+<p>其中 code highlight theme 也可以選。<br>我選擇將 <code>highlight_theme: normal</code> 改成 <code>highlight_theme: night eighties</code>。</p>
+<p>在 theme 的 _config.yml 中把 social 的 github 打開、並且 enable social icon only。把 lazyload 設為 true、把 toc 設為 false（文章目錄拔掉）、把 updated_at 設為 false（編輯文章的時間拔掉）。</p>
+<p>最後在 blog 的 _config.yml 將 <code>theme: landscape</code> 改成 <code>theme: next</code> 即可。</p>
+<h3 id="Categories"><a href="#Categories" class="headerlink" title="Categories"></a>Categories</h3><p>寫文章前先建立 blog 的 “分類”。之後寫文章時可以把文章歸類。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page Categories</span><br></pre></td></tr></table></figure>
+
+<p>就可以去 /blog/source/Categories/index.md 編輯。<br>增加頁面的 type 屬性為 “categories”。<br>可以把頁面的 comments 關閉。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Categories</span><br><span class="line">date: 2019-03-19 12:12:12</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>再來，就去 theme 的 _config.yml 編輯，把前方 categories 的註解#拿掉。我這邊也順便把 archives 加上註解 :P。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">home: &#x2F; || home</span><br><span class="line">#about: &#x2F;about&#x2F; || user</span><br><span class="line">#tags: &#x2F;tags&#x2F; || tags</span><br><span class="line">categories: &#x2F;categories&#x2F; || th</span><br><span class="line">#archives: &#x2F;archives&#x2F; || archive</span><br><span class="line">#schedule: &#x2F;schedule&#x2F; || calendar</span><br><span class="line">#sitemap: &#x2F;sitemap.xml || sitemap</span><br><span class="line">#commonweal: &#x2F;404&#x2F; || heartbeat</span><br></pre></td></tr></table></figure>
+
+<h3 id="Disqus"><a href="#Disqus" class="headerlink" title="Disqus"></a>Disqus</h3><p>Disqus 這個 plugin 為文章加入了留言的功能。</p>
+<ol>
+<li>先去 <a href="https://disqus.com/">Disqus</a> 申請帳號。</li>
+<li>申請 site。</li>
+<li>到 site 的 settings 點進 general 查看自己 website 的 shortname。</li>
+<li>修改 theme 的 _config.yml。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">disqus:</span><br><span class="line">enable: true</span><br><span class="line">shortname: &#123;&#123;shortname&#125;&#125;</span><br><span class="line">count: true</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="Writing-Post"><a href="#Writing-Post" class="headerlink" title="Writing Post"></a>Writing Post</h2><p>首先建立新的文章。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd blog</span><br><span class="line">$ hexo new blog01</span><br></pre></td></tr></table></figure>
+
+<p>就可以進去 /blog/source/_posts/blog01.md 編輯文章。<br>最前面的是一些基本資訊，關於文章標題、分類、標籤等等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123;標題&#125;&#125;</span><br><span class="line">date: &#123;&#123;創立時間&#125;&#125;</span><br><span class="line">categories: &#123;&#123;分類&#125;&#125;</span><br><span class="line">keywords: &#123;&#123;關鍵字&#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">- &#123;&#123;tag1&#125;&#125;</span><br><span class="line">- &#123;&#123;tag2&#125;&#125;</span><br><span class="line">- &#123;&#123;tag3&#125;&#125;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>接著就剩下文章內容的部分了，要自行發揮 :P。</p>
+<h2 id="Preview-and-Deploy"><a href="#Preview-and-Deploy" class="headerlink" title="Preview and Deploy"></a>Preview and Deploy</h2><p>設定完環境、寫完文章之後，啟動 local server。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd blog</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>即可在 <a href="http://localhost:4000">http://localhost:4000</a> 看到自己的部落格預覽的樣子。<br>（其實隨時在修改 blog 時就可以隨時開著頁面預覽了 :P）</p>
+<img src="/uploads/images/blog01/preview.png" class="" width="800" title="preview blog">
+
+<p>確認預覽的頁面為自己想要的樣子之後，接著就要 deploy 到 github page 上了。</p>
+<p>首先修改 blog 的 _config.yml。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">language: zh-tw</span><br><span class="line"></span><br><span class="line">url: https:&#x2F;&#x2F;ylkuo96.github.io&#x2F;</span><br><span class="line"></span><br><span class="line">deploy: </span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;ylkuo96&#x2F;ylkuo96.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>部屬前要先安裝套件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd blog</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>接著執行下列指令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd blog</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>note:: 若遇到 <code>fatal: Not a git repository (or any of the parent directories): .git</code>，將 blog 底下的 .deploy_git 資料夾刪掉然後重新 deploy 即可。</p>
+<p>完成之後即可在 <a href="https://ylkuo96.github.io">https://ylkuo96.github.io</a> 上看到自己的 blog！</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><ol>
+<li>新文章就 <code>$ hexo new &lt;postname&gt;</code></li>
+<li>新分頁就 <code>$ hexo new page &lt;pagename&gt;</code></li>
+<li>產生靜態檔 <code>$ hexo g</code> (generate)</li>
+<li>預覽 <code>$ hexo s</code> (server)</li>
+<li>部屬 <code>$ hexo d</code> (deploy) </li>
+<li>若有點怪怪的可以時不時 <code>$ hexo clean</code> 一下 :P</li>
+</ol>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<li><a href="https://www.larrynote.com/website-service/6590/">other people’s hexo blog</a></li>
+<li><a href="https://github.com/LeonWuV/FE-blog-repository/blob/master/hexo/hexo%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98%E4%B9%8B%E6%88%91%E4%BB%AC%E6%8D%A2%E4%BA%86%E7%94%B5%E8%84%91%E6%80%8E%E4%B9%88%E5%8A%9E.md">用 git 維持 hexo 資料夾</a></li>
+<li><a href="http://blog.senjoeson.com/2018/06/07/hexo%E5%B8%B8%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">若 hexo g 報錯</a></li>
+</ol>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/blog/" rel="tag">blog</a>, <a class="has-link-grey -link" href="/tags/github/" rel="tag">github</a>, <a class="has-link-grey -link" href="/tags/hexo/" rel="tag">hexo</a>, <a class="has-link-grey -link" href="/tags/hexo-next/" rel="tag">hexo-next</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/05/blog02/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Config My Blog 02</span>
+            </a>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://ylkuo96.github.io/2020/03/03/blog01/';
+        this.page.identifier = '2020/03/03/blog01/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'yilin-comments' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-3-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="/images/cute.jpg" alt="yilin">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        yilin
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        ʕ￫ᴥ￩ʔ
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Taipei</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            4
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            3
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            7
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/ylkuo96">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    Catalogue
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#前言">
+        <span class="has-mr-6">1</span>
+        <span>前言</span>
+        </a></li><li>
+        <a class="is-flex" href="#Prerequisite">
+        <span class="has-mr-6">2</span>
+        <span>Prerequisite</span>
+        </a></li><li>
+        <a class="is-flex" href="#Installation">
+        <span class="has-mr-6">3</span>
+        <span>Installation</span>
+        </a></li><li>
+        <a class="is-flex" href="#Create-a-blog">
+        <span class="has-mr-6">4</span>
+        <span>Create a blog</span>
+        </a></li><li>
+        <a class="is-flex" href="#Components">
+        <span class="has-mr-6">5</span>
+        <span>Components</span>
+        </a></li><li>
+        <a class="is-flex" href="#Config">
+        <span class="has-mr-6">6</span>
+        <span>Config</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Theme">
+        <span class="has-mr-6">6.1</span>
+        <span>Theme</span>
+        </a></li><li>
+        <a class="is-flex" href="#Categories">
+        <span class="has-mr-6">6.2</span>
+        <span>Categories</span>
+        </a></li><li>
+        <a class="is-flex" href="#Disqus">
+        <span class="has-mr-6">6.3</span>
+        <span>Disqus</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Writing-Post">
+        <span class="has-mr-6">7</span>
+        <span>Writing Post</span>
+        </a></li><li>
+        <a class="is-flex" href="#Preview-and-Deploy">
+        <span class="has-mr-6">8</span>
+        <span>Preview and Deploy</span>
+        </a></li><li>
+        <a class="is-flex" href="#Summary">
+        <span class="has-mr-6">9</span>
+        <span>Summary</span>
+        </a></li><li>
+        <a class="is-flex" href="#References">
+        <span class="has-mr-6">10</span>
+        <span>References</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/blog/">
+            <span class="level-start">
+                <span class="level-item">blog</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/ml/">
+            <span class="level-start">
+                <span class="level-item">ml</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/mood/">
+            <span class="level-start">
+                <span class="level-item">mood</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/07/26/mood01/" class="media-left">
+
+                <!--
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello Again">
+                </p>
+                -->
+
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-26T13:21:03.000Z">2020-07-26</time></div>
+                    <a href="/2020/07/26/mood01/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello Again</a>
+
+                    <!-- 
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/mood/">mood</a>
+                    </p>
+                    -->
+
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/18/ml01/" class="media-left">
+
+                <!--
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Machine Learning Note 01">
+                </p>
+                -->
+
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-18T07:57:05.000Z">2020-03-18</time></div>
+                    <a href="/2020/03/18/ml01/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Machine Learning Note 01</a>
+
+                    <!-- 
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/ml/">ml</a>
+                    </p>
+                    -->
+
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/05/blog02/" class="media-left">
+
+                <!--
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Config My Blog 02">
+                </p>
+                -->
+
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-05T06:05:38.000Z">2020-03-05</time></div>
+                    <a href="/2020/03/05/blog02/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Config My Blog 02</a>
+
+                    <!-- 
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/blog/">blog</a>
+                    </p>
+                    -->
+
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/03/blog01/" class="media-left">
+
+                <!--
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Config My Blog 01">
+                </p>
+                -->
+
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-03T08:11:20.000Z">2020-03-03</time></div>
+                    <a href="/2020/03/03/blog01/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Config My Blog 01</a>
+
+                    <!-- 
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/blog/">blog</a>
+                    </p>
+                    -->
+
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+
+                
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    BLOG ∞
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 yilin&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://ylkuo96.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
